@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مالديني ضد السايفر</title>
+    <title>مالديني ضد لوفيلاندو</title>
     <style>
         * {
             margin: 0;
@@ -80,14 +80,14 @@
 <body>
 
     <div class="container">
-        <h1>مالديني ضد السايفر</h1>
+        <h1>مالديني ضد لوفيلاندو</h1>
         <button id="startBattle">ابدأ المعركة</button>
 
         <div id="battle-container" class="hidden">
             <div id="battle-message" class="battle-message"></div>
             <div id="battle-animation" class="hidden">
-                <p>مالديني يجلد السايفر...!</p>
-                <p class="battle-message">شخصيه السايفر تنهار!</p>
+                <p>مالديني يجلد لوفيلاندو...!</p>
+                <p class="battle-message">شخصيه لوفيلاندو تنهار!</p>
             </div>
         </div>
     </div>
@@ -115,13 +115,13 @@
             setTimeout(() => {
                 battleMessage.textContent = 'مالديني يظهر في ساحة المعركة!';
                 setTimeout(() => {
-                    battleMessage.textContent = 'السايفر يظهر!';
+                    battleMessage.textContent = 'لوفيلاندو يظهر!';
                     setTimeout(() => {
-                        battleMessage.textContent = 'الصراع العنيف بين مالديني و السايفر...';
+                        battleMessage.textContent = 'الصراع العنيف بين مالديني و لوفيلاندو...';
                         setTimeout(() => {
-                            battleMessage.textContent = 'مالديني يجلد السايفر!';
+                            battleMessage.textContent = 'مالديني يجلد لوفيلاندو!';
                             setTimeout(() => {
-                                battleMessage.textContent = 'شخصيه السايفر تنهار!';
+                                battleMessage.textContent = 'شخصيه لوفيلاندو تنهار!';
                                 setTimeout(() => {
                                     battleMessage.textContent = 'مالديني انتصر!';
                                     battleAnimation.classList.remove('hidden');
@@ -135,3 +135,4 @@
     </script>
 </body>
 </html>
+
