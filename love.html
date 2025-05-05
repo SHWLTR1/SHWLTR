@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مالديني ضد السايفر</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('battle-field.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            font-size: 20px;
+        }
+
+        .container {
+            z-index: 1000;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 60px;
+            color: gold;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        #button {
+            background-color: #FF8C00;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        #button:hover {
+            background-color: #FF6600;
+            transform: scale(1.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .battle-message {
+            font-size: 24px;
+            margin-top: 30px;
+            color: red;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        #battle-container {
+            margin-top: 40px;
+            color: gold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        @keyframes battle {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>مالديني ضد السايفر</h1>
+        <button id="startBattle">ابدأ المعركة</button>
+
+        <div id="battle-container" class="hidden">
+            <div id="battle-message" class="battle-message"></div>
+            <div id="battle-animation" class="hidden">
+                <p>مالديني يجلد السايفر...!</p>
+                <p class="battle-message">شخصيه السايفر تنهار!</p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="background-sound" loop>
+        <source src="battle-theme.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        const startButton = document.getElementById('startBattle');
+        const battleContainer = document.getElementById('battle-container');
+        const battleMessage = document.getElementById('battle-message');
+        const battleAnimation = document.getElementById('battle-animation');
+        const audio = document.getElementById('background-sound');
+
+        startButton.addEventListener('click', function() {
+            // تشغيل الموسيقى الخلفية
+            audio.play();
+            startBattle();
+        });
+
+        function startBattle() {
+            battleContainer.classList.remove('hidden');
+            battleMessage.textContent = 'المعركة تبدأ الآن...';
+            setTimeout(() => {
+                battleMessage.textContent = 'مالديني يظهر في ساحة المعركة!';
+                setTimeout(() => {
+                    battleMessage.textContent = 'السايفر يظهر!';
+                    setTimeout(() => {
+                        battleMessage.textContent = 'الصراع العنيف بين مالديني و السايفر...';
+                        setTimeout(() => {
+                            battleMessage.textContent = 'مالديني يجلد السايفر!';
+                            setTimeout(() => {
+                                battleMessage.textContent = 'شخصيه السايفر تنهار!';
+                                setTimeout(() => {
+                                    battleMessage.textContent = 'مالديني انتصر!';
+                                    battleAnimation.classList.remove('hidden');
+                                }, 2000);
+                            }, 2000);
+                        }, 2000);
+                    }, 2000);
+                }, 2000);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
